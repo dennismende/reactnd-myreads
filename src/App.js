@@ -33,7 +33,10 @@ class App extends Component {
     return (
       <div className="app">
         <Route path="/search" render={() => (
-          <BookSearch/>
+          <BookSearch
+            booksWithAssignedShelf={books}
+            onChangeShelfOfBook={this.onChangeShelfOfBook}
+          />
         )}/>
 
         <Route exact path="/" render={() => (
