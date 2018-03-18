@@ -11,7 +11,9 @@ class BookShelfsOverview extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf/>
+            <BookShelf title="Currently Reading"/>
+            <BookShelf title="Want to Read"/>
+            <BookShelf title="Read"/>
           </div>
         </div>
         <div className="open-search">
