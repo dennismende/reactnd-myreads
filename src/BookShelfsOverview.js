@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 class BookShelfsOverview extends Component {
   render() {
     const { books } = this.props;
+    const booksCurrentlyReading = books.filter(book => book.shelf === 'currentlyReading');
+    const booksWantToRead = books.filter(book => book.shelf === 'wantToRead');
+    const booksRead = books.filter(book => book.shelf === 'read');
 
     return (
       <div className="list-books">
@@ -13,9 +16,9 @@ class BookShelfsOverview extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf title="Currently Reading" books={books}/>
-            <BookShelf title="Want to Read" books={books}/>
-            <BookShelf title="Read" books={books}/>
+            <BookShelf title="Currently Reading" books={booksCurrentlyReading}/>
+            <BookShelf title="Want to Read" books={booksWantToRead}/>
+            <BookShelf title="Read" books={booksRead}/>
           </div>
         </div>
         <div className="open-search">
